@@ -7,8 +7,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Eahscs\Documents\Visual Studio 2010\Projects\theClickerGame\theClickerGame\theClickerGame\bin\x86\Debug\Content\numberSpritesheet.xnb</Output>
-      <Time>2016-04-22T10:47:08.5572-04:00</Time>
+      <Output>C:\Users\Eahscs\Documents\GitHub\TheClickerGame\theClickerGame\theClickerGame\theClickerGame\bin\x86\Debug\Content\numberSpritesheet.xnb</Output>
+      <Time>2016-04-28T10:46:59.6728-04:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
@@ -16,10 +16,10 @@
       <TargetProfile>HiDef</TargetProfile>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>C:\Users\Eahscs\Documents\Visual Studio 2010\Projects\theClickerGame\theClickerGame\theClickerGameContent\</RootDirectory>
-      <LoggerRootDirectory>C:\Users\Eahscs\Documents\Visual Studio 2010\Projects\theClickerGame\theClickerGame\theClickerGame\</LoggerRootDirectory>
-      <IntermediateDirectory>C:\Users\Eahscs\Documents\Visual Studio 2010\Projects\theClickerGame\theClickerGame\theClickerGameContent\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>C:\Users\Eahscs\Documents\Visual Studio 2010\Projects\theClickerGame\theClickerGame\theClickerGame\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>C:\Users\Eahscs\Documents\GitHub\TheClickerGame\theClickerGame\theClickerGame\theClickerGameContent\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\Eahscs\Documents\GitHub\TheClickerGame\theClickerGame\theClickerGame\theClickerGame\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\Eahscs\Documents\GitHub\TheClickerGame\theClickerGame\theClickerGame\theClickerGameContent\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\Eahscs\Documents\GitHub\TheClickerGame\theClickerGame\theClickerGame\theClickerGame\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>

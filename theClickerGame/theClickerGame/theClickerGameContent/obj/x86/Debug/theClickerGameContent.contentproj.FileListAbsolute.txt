@@ -1,1 +1,2 @@
 C:\Users\Eahscs\Documents\Visual Studio 2010\Projects\theClickerGame\theClickerGame\theClickerGameContent\obj\x86\Debug\theClickerGameContent.contentprojResolveAssemblyReference.cache
+C:\Users\Eahscs\Documents\GitHub\TheClickerGame\theClickerGame\theClickerGame\theClickerGameContent\obj\x86\Debug\theClickerGameContent.contentprojResolveAssemblyReference.cache

@@ -154,12 +154,20 @@ namespace theClickerGame
             }
             else if (state == GameState.PLAYING)
             {
+                //background
+                //spacebar sprite   if space bar pressed sprite moves down
+                clickTimes += 1;
+
             }
             else if (state == GameState.GAMEOVER)
             {
+                //background that says hit space to see score
+
             }
             else if (state == GameState.SHOWSCORE)
             {
+                DrawNumber(spriteBatch, clickTimes, 10, 150);
+
             }
             else if (state == GameState.HIGHSCORE)
             {
@@ -179,23 +187,28 @@ namespace theClickerGame
 
             spriteBatch.Begin();
 
-            DrawNumber(spriteBatch, 10, 10, 150);
+            
 
             if (state == GameState.TITLE_SCREEN)
             {
+                //background already made
             }
             else if (state == GameState.TIME_SELECTION)
             {
+                
             }
             else if (state == GameState.PLAYING)
             {
+                
+
             }
             else if (state == GameState.GAMEOVER)
             {
+                //background that says hit space to see score
             }
             else if (state == GameState.SHOWSCORE)
             {
-
+                
             }
             else if (state == GameState.HIGHSCORE)
             {
