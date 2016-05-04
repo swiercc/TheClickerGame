@@ -12,3 +12,4 @@ C:\Users\Eahscs\Documents\GitHub\TheClickerGame\theClickerGame\theClickerGame\th
 C:\Users\Eahscs\Documents\GitHub\TheClickerGame\theClickerGame\theClickerGame\theClickerGame\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 C:\Users\Eahscs\Documents\GitHub\TheClickerGame\theClickerGame\theClickerGame\theClickerGame\obj\x86\Debug\theClickerGame.exe
 C:\Users\Eahscs\Documents\GitHub\TheClickerGame\theClickerGame\theClickerGame\theClickerGame\obj\x86\Debug\theClickerGame.pdb
+C:\Users\Eahscs\Documents\GitHub\TheClickerGame\theClickerGame\theClickerGame\theClickerGame\bin\x86\Debug\Content\TitleScreen.xnb

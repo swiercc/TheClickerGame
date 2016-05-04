@@ -8,7 +8,16 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Eahscs\Documents\GitHub\TheClickerGame\theClickerGame\theClickerGame\theClickerGame\bin\x86\Debug\Content\numberSpritesheet.xnb</Output>
-      <Time>2016-04-28T10:46:59.6728-04:00</Time>
+      <Time>2016-05-04T10:40:38.4042-04:00</Time>
+    </Item>
+    <Item>
+      <Source>TitleScreen.png</Source>
+      <Name>TitleScreen</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Eahscs\Documents\GitHub\TheClickerGame\theClickerGame\theClickerGame\theClickerGame\bin\x86\Debug\Content\TitleScreen.xnb</Output>
+      <Time>2016-05-04T11:05:52.5792-04:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

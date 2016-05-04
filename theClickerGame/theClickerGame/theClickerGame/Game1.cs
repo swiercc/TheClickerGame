@@ -33,6 +33,10 @@ namespace theClickerGame
         Texture2D numberSpritesheet;
 
         int clickTimes = 0;
+        float timeRemaining = 0;
+        bool keyDown = false;
+
+        Texture2D titleScreen;
 
 
         public Game1()
@@ -66,12 +70,22 @@ namespace theClickerGame
             state = GameState.TITLE_SCREEN;
 
             numberSpritesheet = Content.Load<Texture2D>(@"numberSpritesheet");
+
+            titleScreen = Content.Load<Texture2D>(@"TitleScreen");
         }
 
         public void DrawNumber(SpriteBatch sb, int num, int x, int y)
         {
+            DrawNumber(sb, num, x, y, 1.0f, -1);
+        }
+
+        public void DrawNumber(SpriteBatch sb, int num, int x, int y, float scale, int padsize)
+        {
             String text = num.ToString();
             int spacing = 0;
+
+            if (padsize != -1)
+                text = text.PadLeft(padsize, '0');
 
          
             for (int i = 0; i < text.Length; i++)
@@ -114,8 +128,8 @@ namespace theClickerGame
                     
                 }
 
-                sb.Draw(numberSpritesheet, new Rectangle(x+spacing, y, rect.Width, rect.Height), rect, Color.White);
-                spacing += rect.Width + 0;
+                sb.Draw(numberSpritesheet, new Rectangle(x+spacing, y, (int)(rect.Width*scale), (int)(rect.Height*scale)), rect, Color.White);
+                spacing += (int)(rect.Width*scale) + 0;
 
             }
         }
@@ -146,28 +160,47 @@ namespace theClickerGame
             {
                 if (kb.IsKeyDown(Keys.Space))
                 {
-                    
+                    state = GameState.TIME_SELECTION;
                 }
             }
             else if (state == GameState.TIME_SELECTION)
             {
+                // Write code to handle the time selection
+                if (kb.IsKeyDown(Keys.D1))
+                {
+                    timeRemaining = 5 * 1000f;
+                    state = GameState.PLAYING;
+                }
             }
             else if (state == GameState.PLAYING)
             {
                 //background
                 //spacebar sprite   if space bar pressed sprite moves down
                 clickTimes += 1;
-
+                timeRemaining -= (float)gameTime.ElapsedGameTime.Milliseconds;
+                if (timeRemaining <= 0)
+                {
+                    state = GameState.GAMEOVER;
+                }
             }
             else if (state == GameState.GAMEOVER)
             {
                 //background that says hit space to see score
-
+                if (kb.IsKeyDown(Keys.Space))
+                {
+                    state = GameState.SHOWSCORE;
+                    keyDown = true;
+                }
             }
             else if (state == GameState.SHOWSCORE)
             {
-                DrawNumber(spriteBatch, clickTimes, 10, 150);
+                if (keyDown && !kb.IsKeyDown(Keys.Space))
+                    keyDown = false;
 
+                if (!keyDown && kb.IsKeyDown(Keys.Space))
+                {                    
+                    state = GameState.TIME_SELECTION;
+                }
             }
             else if (state == GameState.HIGHSCORE)
             {
@@ -185,36 +218,55 @@ namespace theClickerGame
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
-            spriteBatch.Begin();
+            
 
             
 
-            if (state == GameState.TITLE_SCREEN)
+            if (state == GameState.TITLE_SCREEN)            
             {
-                //background already made
+                spriteBatch.Begin();
+                spriteBatch.Draw(titleScreen,
+                    new Rectangle(0, 0, this.Window.ClientBounds.Width,
+                        this.Window.ClientBounds.Height),
+                        Color.White);
+                spriteBatch.End();
             }
             else if (state == GameState.TIME_SELECTION)
             {
-                
+                GraphicsDevice.Clear(Color.Fuchsia);
+                spriteBatch.Begin();
+                DrawNumber(spriteBatch, 1, 10, 150);
+                spriteBatch.End();
             }
             else if (state == GameState.PLAYING)
             {
-                
 
+                GraphicsDevice.Clear(Color.Goldenrod);
+                spriteBatch.Begin();
+                //                      How much time remaining    x    y  scale number length
+                DrawNumber(spriteBatch, (int)(timeRemaining/10f), 10, 150, 0.7f, 3);
+                spriteBatch.End();
             }
             else if (state == GameState.GAMEOVER)
             {
                 //background that says hit space to see score
+                GraphicsDevice.Clear(Color.LemonChiffon);
+                spriteBatch.Begin();
+                DrawNumber(spriteBatch, 3, 10, 150);
+                spriteBatch.End();
             }
             else if (state == GameState.SHOWSCORE)
             {
-                
+                GraphicsDevice.Clear(Color.LightCoral);
+                spriteBatch.Begin();
+                DrawNumber(spriteBatch, clickTimes, 10, 150);
+                spriteBatch.End();
             }
             else if (state == GameState.HIGHSCORE)
             {
             }
 
-            spriteBatch.End();
+            
 
             base.Draw(gameTime);
         }
