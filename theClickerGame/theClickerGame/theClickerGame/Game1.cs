@@ -33,11 +33,12 @@ namespace theClickerGame
         Texture2D numberSpritesheet;
 
         int clickTimes = 0;
-        float timeRemaining = 0;
+        float timeRemaining;
         bool keyDown = false;
 
         Texture2D titleScreen;
 
+        string timeSelection;
 
         public Game1()
         {
@@ -170,6 +171,22 @@ namespace theClickerGame
                 {
                     timeRemaining = 5 * 1000f;
                     state = GameState.PLAYING;
+
+                   timeSelection = Console.ReadLine();
+                   
+                   if (timeSelection == "1")
+                   {
+                       timeRemaining = 10;
+                       state = GameState.PLAYING;
+                   }
+                   else if(timeSelection == "2")
+                   {
+
+                   }
+                   else if (timeSelection == "3")
+                   {
+
+                   }
                 }
             }
             else if (state == GameState.PLAYING)
@@ -237,13 +254,15 @@ namespace theClickerGame
                 spriteBatch.Begin();
                 DrawNumber(spriteBatch, 1, 10, 150);
                 spriteBatch.End();
+
+                
             }
             else if (state == GameState.PLAYING)
             {
 
                 GraphicsDevice.Clear(Color.Goldenrod);
                 spriteBatch.Begin();
-                //                      How much time remaining    x    y  scale number length
+                //                      How much time remaining    x    y  scale number lengths
                 DrawNumber(spriteBatch, (int)(timeRemaining/10f), 10, 150, 0.7f, 3);
                 spriteBatch.End();
             }
