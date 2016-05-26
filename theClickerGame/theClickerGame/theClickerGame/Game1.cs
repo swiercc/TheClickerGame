@@ -37,6 +37,7 @@ namespace theClickerGame
         bool keyDown = false;
 
         Texture2D titleScreen;
+        Texture2D TimeSelection;
 
         string timeSelection;
 
@@ -73,6 +74,7 @@ namespace theClickerGame
             numberSpritesheet = Content.Load<Texture2D>(@"numberSpritesheet");
 
             titleScreen = Content.Load<Texture2D>(@"TitleScreen");
+            TimeSelection = Content.Load<Texture2D>(@"TimeSelection");
         }
 
         public void DrawNumber(SpriteBatch sb, int num, int x, int y)
@@ -250,8 +252,12 @@ namespace theClickerGame
             }
             else if (state == GameState.TIME_SELECTION)
             {
-                GraphicsDevice.Clear(Color.Fuchsia);
+                
                 spriteBatch.Begin();
+                spriteBatch.Draw(TimeSelection,
+                    new Rectangle(0, 0, this.Window.ClientBounds.Width,
+                        this.Window.ClientBounds.Height),
+                        Color.White);
                 DrawNumber(spriteBatch, 1, 10, 150);
                 spriteBatch.End();
 
