@@ -15,3 +15,5 @@ C:\Users\Eahscs\Documents\GitHub\TheClickerGame\theClickerGame\theClickerGame\th
 C:\Users\Eahscs\Documents\GitHub\TheClickerGame\theClickerGame\theClickerGame\theClickerGame\bin\x86\Debug\Content\TitleScreen.xnb
 C:\Users\Eahscs\Documents\GitHub\TheClickerGame\theClickerGame\theClickerGame\theClickerGame\bin\x86\Debug\Content\hitSpaceToContinue.xnb
 C:\Users\Eahscs\Documents\GitHub\TheClickerGame\theClickerGame\theClickerGame\theClickerGame\bin\x86\Debug\Content\TimeSelection.xnb
+C:\Users\Eahscs\Documents\GitHub\TheClickerGame\theClickerGame\theClickerGame\theClickerGame\bin\x86\Debug\Content\Playing.xnb
+C:\Users\Eahscs\Documents\GitHub\TheClickerGame\theClickerGame\theClickerGame\theClickerGame\bin\x86\Debug\Content\Showscore.xnb

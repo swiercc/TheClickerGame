@@ -8,7 +8,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Eahscs\Documents\GitHub\TheClickerGame\theClickerGame\theClickerGame\theClickerGame\bin\x86\Debug\Content\numberSpritesheet.xnb</Output>
-      <Time>2016-05-26T10:37:10.7558-04:00</Time>
+      <Time>2016-06-02T10:42:04.1315-04:00</Time>
     </Item>
     <Item>
       <Source>TitleScreen.png</Source>
@@ -17,7 +17,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Eahscs\Documents\GitHub\TheClickerGame\theClickerGame\theClickerGame\theClickerGame\bin\x86\Debug\Content\TitleScreen.xnb</Output>
-      <Time>2016-05-26T10:37:10.7518-04:00</Time>
+      <Time>2016-06-02T10:42:04.0265-04:00</Time>
     </Item>
     <Item>
       <Source>hitSpaceToContinue.png</Source>
@@ -26,7 +26,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Eahscs\Documents\GitHub\TheClickerGame\theClickerGame\theClickerGame\theClickerGame\bin\x86\Debug\Content\hitSpaceToContinue.xnb</Output>
-      <Time>2016-05-26T10:52:06.9588-04:00</Time>
+      <Time>2016-06-02T10:42:04.1245-04:00</Time>
     </Item>
     <Item>
       <Source>TimeSelection.png</Source>
@@ -35,7 +35,25 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Eahscs\Documents\GitHub\TheClickerGame\theClickerGame\theClickerGame\theClickerGame\bin\x86\Debug\Content\TimeSelection.xnb</Output>
-      <Time>2016-05-26T10:58:09.0008-04:00</Time>
+      <Time>2016-06-02T10:42:04.0155-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Playing.png</Source>
+      <Name>Playing</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Eahscs\Documents\GitHub\TheClickerGame\theClickerGame\theClickerGame\theClickerGame\bin\x86\Debug\Content\Playing.xnb</Output>
+      <Time>2016-06-02T11:17:52.4765-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Showscore.png</Source>
+      <Name>Showscore</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Eahscs\Documents\GitHub\TheClickerGame\theClickerGame\theClickerGame\theClickerGame\bin\x86\Debug\Content\Showscore.xnb</Output>
+      <Time>2016-06-02T11:42:17.9825-04:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

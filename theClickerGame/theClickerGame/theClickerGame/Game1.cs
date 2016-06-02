@@ -35,11 +35,14 @@ namespace theClickerGame
         int clickTimes = 0;
         float timeRemaining;
         bool keyDown = false;
+        int highScore;
 
         Texture2D titleScreen;
         Texture2D TimeSelection;
+        Texture2D gameoverScreen;
+        Texture2D Playing;
+        Texture2D Showscore;
 
-        string timeSelection;
 
         public Game1()
         {
@@ -75,6 +78,9 @@ namespace theClickerGame
 
             titleScreen = Content.Load<Texture2D>(@"TitleScreen");
             TimeSelection = Content.Load<Texture2D>(@"TimeSelection");
+            gameoverScreen = Content.Load<Texture2D>(@"hitSpaceToContinue");
+            Playing = Content.Load<Texture2D>(@"Playing");
+            Showscore = Content.Load<Texture2D>(@"Showscore");
         }
 
         public void DrawNumber(SpriteBatch sb, int num, int x, int y)
@@ -168,35 +174,41 @@ namespace theClickerGame
             }
             else if (state == GameState.TIME_SELECTION)
             {
+                clickTimes = 0;
                 // Write code to handle the time selection
                 if (kb.IsKeyDown(Keys.D1))
                 {
+                    
                     timeRemaining = 5 * 1000f;
                     state = GameState.PLAYING;
-
-                   timeSelection = Console.ReadLine();
-                   
-                   if (timeSelection == "1")
-                   {
-                       timeRemaining = 10;
-                       state = GameState.PLAYING;
-                   }
-                   else if(timeSelection == "2")
-                   {
-
-                   }
-                   else if (timeSelection == "3")
-                   {
-
-                   }
+                }
+                else if (kb.IsKeyDown(Keys.D2))
+                {
+                    timeRemaining = 10 * 1000f;
+                    state = GameState.PLAYING;
+                }
+                else if (kb.IsKeyDown(Keys.D3))
+                {
+                    timeRemaining = 30 * 1000f;
+                    state = GameState.PLAYING;
                 }
             }
             else if (state == GameState.PLAYING)
             {
-                //background
+                
                 //spacebar sprite   if space bar pressed sprite moves down
-                clickTimes += 1;
+                if (keyDown && !kb.IsKeyDown(Keys.Space))
+                    keyDown = false;
+
+                if (!keyDown && kb.IsKeyDown(Keys.Space))
+                {
+                    clickTimes += 1;
+                    keyDown = true;
+                }
+                
+                
                 timeRemaining -= (float)gameTime.ElapsedGameTime.Milliseconds;
+
                 if (timeRemaining <= 0)
                 {
                     state = GameState.GAMEOVER;
@@ -204,25 +216,45 @@ namespace theClickerGame
             }
             else if (state == GameState.GAMEOVER)
             {
-                //background that says hit space to see score
-                if (kb.IsKeyDown(Keys.Space))
+                highScore = clickTimes;
+                
+                if (keyDown && !kb.IsKeyDown(Keys.Space))
+                    keyDown = false;
+
+                if (!keyDown && kb.IsKeyDown(Keys.Space))
                 {
                     state = GameState.SHOWSCORE;
                     keyDown = true;
                 }
+                
             }
             else if (state == GameState.SHOWSCORE)
+            {
+                
+                if (kb.IsKeyDown(Keys.Enter))
+                {                    
+                    state = GameState.TIME_SELECTION;
+                    
+                    
+                }
+                else if (kb.IsKeyDown(Keys.H))
+                {
+                    state = GameState.HIGHSCORE;
+                    
+                    
+                }
+            }
+            else if (state == GameState.HIGHSCORE)
             {
                 if (keyDown && !kb.IsKeyDown(Keys.Space))
                     keyDown = false;
 
                 if (!keyDown && kb.IsKeyDown(Keys.Space))
-                {                    
+                {
                     state = GameState.TIME_SELECTION;
+                    
+                    
                 }
-            }
-            else if (state == GameState.HIGHSCORE)
-            {
             }
 
 
@@ -258,7 +290,7 @@ namespace theClickerGame
                     new Rectangle(0, 0, this.Window.ClientBounds.Width,
                         this.Window.ClientBounds.Height),
                         Color.White);
-                DrawNumber(spriteBatch, 1, 10, 150);
+          
                 spriteBatch.End();
 
                 
@@ -268,8 +300,13 @@ namespace theClickerGame
 
                 GraphicsDevice.Clear(Color.Goldenrod);
                 spriteBatch.Begin();
+                spriteBatch.Draw(Playing,
+                    new Rectangle(0, 0, this.Window.ClientBounds.Width,
+                        this.Window.ClientBounds.Height),
+                        Color.White);
+
                 //                      How much time remaining    x    y  scale number lengths
-                DrawNumber(spriteBatch, (int)(timeRemaining/10f), 10, 150, 0.7f, 3);
+                DrawNumber(spriteBatch, (int)(timeRemaining/10f), 310, 400, 0.7f, 3);
                 spriteBatch.End();
             }
             else if (state == GameState.GAMEOVER)
@@ -277,18 +314,34 @@ namespace theClickerGame
                 //background that says hit space to see score
                 GraphicsDevice.Clear(Color.LemonChiffon);
                 spriteBatch.Begin();
-                DrawNumber(spriteBatch, 3, 10, 150);
+                spriteBatch.Draw(gameoverScreen,
+                    new Rectangle(0, 0, this.Window.ClientBounds.Width,
+                        this.Window.ClientBounds.Height),
+                        Color.White);
+                 
                 spriteBatch.End();
             }
             else if (state == GameState.SHOWSCORE)
             {
                 GraphicsDevice.Clear(Color.LightCoral);
                 spriteBatch.Begin();
-                DrawNumber(spriteBatch, clickTimes, 10, 150);
+                spriteBatch.Draw(Showscore,
+                    new Rectangle(0, 0, this.Window.ClientBounds.Width,
+                        this.Window.ClientBounds.Height),
+                        Color.White);
+                DrawNumber(spriteBatch, clickTimes, 310, 200);
                 spriteBatch.End();
             }
             else if (state == GameState.HIGHSCORE)
             {
+                GraphicsDevice.Clear(Color.LightCoral);
+                spriteBatch.Begin();
+                spriteBatch.Draw(Showscore,
+                    new Rectangle(0, 0, this.Window.ClientBounds.Width,
+                        this.Window.ClientBounds.Height),
+                        Color.White);
+                DrawNumber(spriteBatch, highScore, 310, 200);
+                spriteBatch.End();
             }
 
             
